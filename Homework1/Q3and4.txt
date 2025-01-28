@@ -1,0 +1,34 @@
+Script started on 2025-01-27 01:45:47+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="159" LINES="20"]
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (car (cdr (cdr '(a b x d))))
+
+X
+* (car (car (cdr (car (cdr '(a (b (x d))))))))
+
+X
+* (car (car (cdr (car (cdr (car (car '(((a (b (x) d)))))))))))
+
+X
+* (cons 'a (cons 'b (cons 'x (cons 'd nil))))
+
+(A B X D)
+* (cons 'a (cons (cons 'b (cons (cons 'x (cons 'd nil)) nil)) nil))
+
+(A (B (X D)))
+* (cons (cons (cons 'a (cons (cons 'b (cons (cons 'x nil) (cons 'd nil) ) ) nil)) nil) nil)
+
+(((A (B (X) D))))
+* ^Z
+[1]+  Stopped                 sbcl
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ clear
+[H[2J[3J[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ [K[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ exit
+There are stopped jobs.
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework1 [0;36m([1;31mmain[0;36m) [0m$ cons (cons (cons 'a (cons (cons 'b (cons (cons 'x nil) (cons 'd nil) ) ) nil)) nil) nil)[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
