@@ -1,0 +1,144 @@
+Script started on 2025-02-04 23:34:49+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="218" LINES="16"]
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (mys    (defun mystery (x)
+(list (second x) (first x)))
+
+MYSTERY
+* (mystery '(zoq wir e))
+
+(NIL ZOWIE)
+* (mystery (lisy   t 'first 'second))
+
+(SECOND FIRST)
+* ^[[A    (defun ps  speak (x y) (lisy 'all 'x is  'is 'y))
+; in: DEFUN SPEAK
+;     (SB-INT:NAMED-LAMBDA SPEAK
+;         (X Y)
+;       (BLOCK SPEAK (LISY 'ALL 'X 'IS 'Y)))
+; 
+; caught STYLE-WARNING:
+;   The variable X is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable Y is defined but never used.
+; in: DEFUN SPEAK
+;     (LISY 'ALL 'X 'IS 'Y)
+; 
+; caught STYLE-WARNING:
+;   undefined function: LISY
+; 
+; compilation unit finished
+;   Undefined function:
+;     LISY
+;   caught 3 STYLE-WARNING conditions
+
+SPEAK
+* de  (defuj n speak (x) (y) (lisy t 'all x 'is y))
+; in: DEFUN SPEAK
+;     (LIST 'ALL X 'IS Y)
+; 
+; caught WARNING:
+;   undefined variable: Y
+
+;     (Y)
+; 
+; caught STYLE-WARNING:
+;   undefined function: Y
+; 
+; compilation unit finished
+;   Undefined function:
+;     Y
+;   Undefined variable:
+;     Y
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+WARNING: redefining COMMON-LISP-USER::SPEAK in DEFUN
+
+SPEAK
+* (defun speak ((x) (y)) (list all 'x is 'y))
+; in: DEFUN SPEAK
+;     (SB-INT:NAMED-LAMBDA SPEAK
+;         ((X) (Y))
+;       (BLOCK SPEAK (LIST ALL 'X IS 'Y)))
+; 
+; caught ERROR:
+;   Required argument is not a symbol: (X)
+
+debugger invoked on a SB-INT:SIMPLE-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Required argument is not a symbol: (X)
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA NIL :IN SB-C::ACTUALLY-COMPILE))
+0] 0
+; 
+; compilation unit aborted
+;   caught 1 fatal ERROR condition
+;   caught 1 ERROR condition
+
+* (list 'coms t      ns t nil)))   )
+
+(CONS T NIL)
+* (eval (list 'coms  ns t nil)
+)
+
+(T)
+* (eval (eval (lisy t 'cons t nil)))
+; in: T
+;     (T)
+; 
+; caught WARNING:
+;   The function T is undefined, and its name is reserved by ANSI CL so that even
+;   if it were defined later, the code doing so would not be portable.
+; 
+; compilation unit finished
+;   Undefined function:
+;     T
+;   caught 1 WARNING condition
+
+debugger invoked on a UNDEFINED-FUNCTION in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The function COMMON-LISP:T is undefined.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+("undefined function")
+0] (apply#' cons     const        #'cosn  ns '(t nil))
+; No debug variables for current frame: using EVAL instead of EVAL-IN-FRAME.
+(T)
+0] 0
+
+* (apply #'cons '(t nil))
+
+(T)
+* (eval nu il)
+
+NIL
+* (lisy   t 'eval nil)
+
+(EVAL NIL)
+* (eval (list 'eval nik)  l)
+)
+
+NIL
+* ^Z
+[1]+  Stopped                 sbcl
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ exit
+There are stopped jobs.
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ ls
+Q1  Q1part2
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mm

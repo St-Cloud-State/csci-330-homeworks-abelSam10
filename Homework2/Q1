@@ -1,0 +1,393 @@
+Script started on 2025-02-04 23:15:01+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="218" LINES="16"]
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* Ni IL
+
+NIL
+* (NOT (EQUAL 3 (ABS -3)))
+
+NIL
+* (/ (+ 8 12) 2)
+
+10
+* (+ (* 3 3) (* 4 4))
+
+25
+* (DEFUN MILES-PER-GALLON   (INITIAL-ODOMETER-READING FINAL-  ODOMETER-READING GALLONS-CONSUMED)  (/(- FINAL-ODOMETER-READING INITIAL-ODOMETER-READING) GALLONS-CONSUMED))
+; in: DEFUN MILES-PER-GALLON
+;     (SB-INT:NAMED-LAMBDA MILES-PER-GALLON
+;         (INITIAL-ODOMETER-READING FINAL- ODOMETER-READING GALLONS-CONSUMED)
+;       (BLOCK MILES-PER-GALLON
+;         (/ (- FINAL-ODOMETER-READING INITIAL-ODOMETER-READING) GALLONS-CONSUMED)))
+; 
+; caught STYLE-WARNING:
+;   The variable FINAL- is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable ODOMETER-READING is defined but never used.
+; in: DEFUN MILES-PER-GALLON
+;     (- FINAL-ODOMETER-READING INITIAL-ODOMETER-READING)
+; 
+; caught WARNING:
+;   undefined variable: FINAL-ODOMETER-READING
+; 
+; compilation unit finished
+;   Undefined variable:
+;     FINAL-ODOMETER-READING
+;   caught 1 WARNING condition
+;   caught 2 STYLE-WARNING conditions
+
+MILES-PER-GALLON
+* (DEFUN MILES-PER-GALLON   (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUMED)  (/(- FINAL-ODOMETER-READING INITIAL-ODOMETER-READING) GALLONS-CONSUMED))
+WARNING: redefining COMMON-LISP-USER::MILES-PER-GALLON in DEFUN
+
+MILES-PER-GALLON
+* (MILES-PER-GALLE ON 0 10 2)
+
+5
+* (third (the quick brown fox))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (THE QUICK BROWN FOX)
+; 
+; caught ERROR:
+;   error while parsing arguments to special operator THE:
+;     too many elements in
+;       (QUICK BROWN FOX)
+;     to satisfy lambda list
+;       (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+;     exactly 2 expected, but got 3
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Execution of a form compiled with errors.
+Form:
+  (THE QUICK BROWN FOX)
+Compile-time error:
+  error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (THE QUICK BROWN FOX)
+0] (third ‘(the quick brown fox))                       '(the quick brown fox))
+
+BROWN
+0] (list 2 and 2 is 4)
+; in: THIRD (THE QUICK BROWN FOX)
+;     (LIST 2 AND 2 IS 4)
+; 
+; caught WARNING:
+;   undefined variable: AND
+; 
+; caught WARNING:
+;   undefined variable: IS
+; 
+; compilation unit finished
+;   Undefined variables:
+;     AND IS
+;   caught 2 WARNING conditions
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable AND is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+((LAMBDA (#:G390)) #<unused argument>)
+   source: (LIST 2 AND 2 IS 4)
+0[2] 0
+
+0] 1
+
+1
+0] (list 2 and 2 is 4            '2 'and '2 'is '4)
+
+(2 AND 2 IS 4)
+0] (+ 1 ’(length (list t t t t))) ^[[D^[[D^[[D                                      '(( lenf gth (lia st t t t t t    )))) 
+; in: THIRD (THE QUICK BROWN FOX)
+;     (+ 1 '(LENGTH (LIST T T T T)))
+; 
+; caught WARNING:
+;   Constant (LENGTH (LIST T T T T)) conflicts with its asserted type NUMBER.
+;   See also:
+;     The SBCL Manual, Node "Handling of Types"
+; 
+; compilation unit finished
+;   caught 1 WARNING condition
+
+debugger invoked on a SIMPLE-TYPE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Value of '(LENGTH (LIST T T T T)) in
+  (+ 1 '(LENGTH (LIST T T T T)))
+  is
+    (LENGTH (LIST T T T T)),
+  not a
+    NUMBER.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+(SB-C::%COMPILE-TIME-TYPE-ERROR ((LENGTH (LIST T T T T))) NUMBER #<unused argument> ((QUOTE (LENGTH (LIST T T T T)))) "(+ 1 '(LENGTH (LIST T T T T)))" NIL)
+0[2] ( 1
+
+* (+1 '(length(list             (lem ngth(list 'y 'y t    t 't 't 't)))
+; in: 1 (LENGTH (LIST 'T 'T 'T 'T))
+;     (1 (LENGTH (LIST 'T 'T 'T 'T)))
+; 
+; caught ERROR:
+;   illegal function call
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Execution of a form compiled with errors.
+Form:
+  (1 (LENGTH (LIST 'T 'T 'T 'T)))
+Compile-time error:
+  illegal function call
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (1 (LENGTH (LIST 'T 'T 'T 'T)))
+0] ^[[A^[[B^[[B            ^[[B^[[B        (=   + 1 lenth     (length (list 'y t 't 't 't)))
+
+5
+0] 0
+
+* (const    'patrick (seymour marvin))
+; in: CONS 'PATRICK
+;     (SEYMOUR MARVIN)
+; 
+; caught WARNING:
+;   undefined variable: MARVIN
+; 
+; caught STYLE-WARNING:
+;   undefined function: SEYMOUR
+; 
+; compilation unit finished
+;   Undefined function:
+;     SEYMOUR
+;   Undefined variable:
+;     MARVIN
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable MARVIN is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (SEYMOUR MARVIN)
+0] 0
+
+* (cons 'patrick '(seymour marvin))
+
+(PATRICK SEYMOUR MARVIN)
+* (v cons 'patrick (list seymour marvin))
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable SEYMOUR is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV SEYMOUR #<NULL-LEXENV>)
+0] 0
+
+* (cons 'patrick (list seymour marvin))                'seymour ',arvin      marvin))
+
+(PATRICK SEYMOUR MARVIN)
+* (defun mystery (x)
+(list (second x) (first x)))
+
+MYSTERY
+* (mystery '(dancing ba ear))
+
+(BEAR DANCING)
+* (mystery 'dancing 'bear)
+
+debugger invoked on a SB-INT:SIMPLE-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  invalid number of arguments: 2
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(MYSTERY DANCING BEAR) [external]
+   source: (SB-INT:NAMED-LAMBDA MYSTERY
+               (X)
+             (BLOCK MYSTERY (LIST (SECOND X) (FIRST X))))
+0] 0
+
+* (mystery '(zoq wie))
+
+(NIL ZOWIE)
+* (mystery (list 'first 'secoj nd))
+
+(SECOND FIRST)
+* (defun speak (x y) (list 'all 'x 'os  is 'y))
+; in: DEFUN SPEAK
+;     (SB-INT:NAMED-LAMBDA SPEAK
+;         (X Y)
+;       (BLOCK SPEAK (LIST 'ALL 'X 'IS 'Y)))
+; 
+; caught STYLE-WARNING:
+;   The variable X is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable Y is defined but never used.
+; 
+; compilation unit finished
+;   caught 2 STYLE-WARNING conditions
+
+SPEAK
+* (deub  fun sp  speak (x) (y) (list 'all x 'is y))
+; in: DEFUN SPEAK
+;     (LIST 'ALL X 'IS Y)
+; 
+; caught WARNING:
+;   undefined variable: Y
+
+;     (Y)
+; 
+; caught STYLE-WARNING:
+;   undefined function: Y
+; 
+; compilation unit finished
+;   Undefined function:
+;     Y
+;   Undefined variable:
+;     Y
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+WARNING: redefining COMMON-LISP-USER::SPEAK in DEFUN
+
+SPEAK
+* (defun speak ((x) (y)) (list all 'x 'is    '    is y 'y))
+; in: DEFUN SPEAK
+;     (SB-INT:NAMED-LAMBDA SPEAK
+;         ((X) (Y))
+;       (BLOCK SPEAK (LIST ALL 'X IS 'Y)))
+; 
+; caught ERROR:
+;   Required argument is not a symbol: (X)
+
+debugger invoked on a SB-INT:SIMPLE-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Required argument is not a symbol: (X)
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA NIL :IN SB-C::ACTUALLY-COMPILE))
+0] 0
+; 
+; compilation unit aborted
+;   caught 1 fatal ERROR condition
+;   caught 1 ERROR condition
+
+* (list 'cp osn  ns t nil)
+
+(CONS T NIL)
+* (eval (list 'cons t nil))
+
+(T)
+* (eval (eval (list 'cons t nil)))
+; in: T
+;     (T)
+; 
+; caught WARNING:
+;   The function T is undefined, and its name is reserved by ANSI CL so that even
+;   if it were defined later, the code doing so would not be portable.
+; 
+; compilation unit finished
+;   Undefined function:
+;     T
+;   caught 1 WARNING condition
+
+debugger invoked on a UNDEFINED-FUNCTION in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The function COMMON-LISP:T is undefined.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+("undefined function")
+0] (a  0
+
+* app   (apply #'const  '(t nil))
+
+(T)
+* (eval nil)
+
+NIL
+* (list 'eval nil)
+
+(EVAL NIL)
+* (eval (list 'eval nil))
+
+NIL
+* ^Z
+[1]+  Stopped                 sbcl
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ exit
+There are stopped jobs.
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ ls
+Q1
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ clear
+[H[2J[3J[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ scrip Q1part2
+bash: scrip: command not found
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ clee[Kar
+[H[2J[3J[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ clearscrip Q1part2t Q1part2[C[C[C[C[C[C[C[C
+Script started, file is Q1part2
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework2 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more 
