@@ -1,0 +1,25 @@
+Script started on 2025-02-19 03:05:12+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="218" LINES="27"]
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework3 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (load "Question2.lip sp")
+
+T
+* (mergesort '(3 2 1 5 4))
+
+(1 2 3 4 5)
+* (mergesort '(23 43 11 6 19 93 35 51 68 74 88))
+
+(6 11 19 23 35 43 51 68 74 88 93)
+* ^Z
+[1]+  Stopped                 sbcl
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework3 [0;36m([1;31mmain[0;36m) [0m$ exit
+There are stopped jobs.
+[0;32m@abelSam10 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework3 [0;36m([1;31mmain[0;36m) [0m$ ls[K[Kexit
+
+Script done on 2025-02-19 03:07:42+00:00 [COMMAND_EXIT_CODE="148"]
