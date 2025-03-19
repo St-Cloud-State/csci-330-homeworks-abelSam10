@@ -1,0 +1,206 @@
+Script started on 2025-03-19 04:56:30+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="159" LINES="29"]
+[0;32m@abelSam10 [0m➜ [1;34m/workspaces/csci-330-homeworks-abelSam10/Homework5 [0;36m([1;31mmain[0;36m) [0m$ sbcl./a.outg++ Question1.cpp[10P./a.out[3Psbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (load "RecursiveDescentParser.lisp")
+
+T
+* (grammar_tester '(i x s) 1)
+
+The string with length 3, has a correct grammar! Below is its derivation:- 
+(I- I (E- (G- X) END) (S- S) END)
+NIL
+* (grammar_tester '(i m) 1)
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unexpected symbol M at position 2, Expected one of 'x', 'y', 'z', 'w' instead!
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(PARSE-G (M) 2)
+   source: (ERROR
+            "Unexpected symbol ~a at position ~d, Expected one of 'x', 'y', 'z', 'w' instead!"
+            UNO POS)
+0] (grammar_tester '(i z s) 1)
+
+The string with length 3, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- Z) END) (S- S) END)
+NIL
+0] (grammar_tester '(a z s s) 1)
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unexpected symbol A at position 1, Expected 'i' instead;
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+(PARSE-I (A Z S S) 1)
+   source: (ERROR "Unexpected symbol ~a at position ~b, Expected 'i' instead;"
+                  (FIRST TOKENS) POS)
+0[2] (grammar_tester '(i x o y s) 1)
+The string with length 5, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- X) (O (G- Y) END)) (S- S) END)
+NIL
+0[2] (grammar_tester '(i x o y) 1)
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unexpected symbol NIL at position 5, Expected either 's' or 'd' instead
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 2).
+  1:         Reduce debugger level (to debug level 1).
+  2:         Exit debugger, returning to top level.
+
+(PARSE-S NIL 5)
+   source: (ERROR
+            "Unexpected symbol ~a at position ~d, Expected either 's' or 'd' instead"
+            UNO POS)
+0[3] (grammar_tester '(i y o z d s b) 1)
+The string with length 7, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- Y) (O (G- Z) END)) (S- D (L- S) B) END)
+NIL
+0[3] (grammar_tester '(i y o z d b) 1)
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unexpected symbol B at position 6, expected 's' instead
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 3).
+  1:         Reduce debugger level (to debug level 2).
+  2:         Reduce debugger level (to debug level 1).
+  3:         Exit debugger, returning to top level.
+
+(PARSE-L (B) 6)
+   source: (ERROR "Unexpected symbol ~a at position ~d, expected 's' instead"
+                  UNO POS)
+0[4] (grammar_tester '(i w d s s b) 1)
+The string with length 6, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- W) END) (S- D (L- S (L- S)) B) END)
+NIL
+0[4] (grammar_tester '(i i d s s s b) 1)
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unexpected symbol I at position 2, Expected one of 'x', 'y', 'z', 'w' instead!
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 4).
+  1:         Reduce debugger level (to debug level 3).
+  2:         Reduce debugger level (to debug level 2).
+  3:         Reduce debugger level (to debug level 1).
+  4:         Exit debugger, returning to top level.
+
+(PARSE-G (I D S S S B) 2)
+   source: (ERROR
+            "Unexpected symbol ~a at position ~d, Expected one of 'x', 'y', 'z', 'w' instead!"
+            UNO POS)
+0[5] (grammar_tester '(i x o y o w d s s b e s) 1)
+The string with length 12, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- X) (O (G- Y) (O (G- W) END))) (S- D (L- S (L- S)) B)
+ (X- E (S- S)))
+NIL
+0[5] (grammar_tester '(i x o y o w d s b e s) 1)
+The string with length 11, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- X) (O (G- Y) (O (G- W) END))) (S- D (L- S) B) (X- E (S- S)))
+NIL
+0[5] (grammar_tester '(i x o y d s s b e s) 1)                                         (grammar_tester '(i x o y d s s b e s) 1)             ds  s b e s)
+1)
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unexpected symbol D at position 7, Expected 'b' instead
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 5).
+  1:         Reduce debugger level (to debug level 4).
+  2:         Reduce debugger level (to debug level 3).
+  3:         Reduce debugger level (to debug level 2).
+  4:         Reduce debugger level (to debug level 1).
+  5:         Exit debugger, returning to top level.
+
+(PARSE-S (D S D S B E S) 5)
+   source: (ERROR "Unexpected symbol ~a at position ~d, Expected 'b' instead"
+                  (FIRST TOKENS) POS)
+0[6] (grammar_tester '(i z o x d s s b e s) 1)
+The string with length 10, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- Z) (O (G- X) END)) (S- D (L- S (L- S)) B) (X- E (S- S)))
+NIL
+0[6] (grammar_tester '(i z o x d s s b s) 1)
+The string with length 8, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- Z) (O (G- X) END)) (S- D (L- S (L- S)) B) END)
+(S)
+0[6] (grammar_tester '(i z o x d s s b s) 1)     b s) 1)
+The string with length 8, has a correct grammar! Below is its derivation:- 
+
+(I- I (E- (G- Z) (O (G- X) END)) (S- D (L- S (L- S)) B) END)
+(B S)
+0[6] (load "RecursiveDescentParser.lisp")
+
+
+; file: /workspaces/csci-330-homeworks-abelSam10/Homework5/RecursiveDescentParser.lisp
+; in: DEFUN PARSE-I
+;     (TOKENS)
+; 
+; caught STYLE-WARNING:
+;   undefined function: TOKENS
+; 
+; compilation unit finished
+;   Undefined function:
+;     TOKENS
+;   caught 1 STYLE-WARNING condition
+T
+0[6] (load "RecursiveDescentParser.lisp")
+
+T
+0[6] (load "RecursiveDescentParser.lisp")(grammar_tester '(i z o x d s s b b s) 1)                                                                             (grammar_tester '(i z o x d s s b b s) 1)
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Unexpected symbols at the end of string
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 6).
+  1:         Reduce debugger level (to debug level 5).
+  2:         Reduce debugger level (to debug level 4).
+  3:         Reduce debugger level (to debug level 3).
+  4:         Reduce debugger level (to debug level 2).
+  5:    
